@@ -1,5 +1,5 @@
 ---
-title: "ITEK Vault"
+title: "ITEK Vault Installation and Use Guide"
 author: "Scott Michael Slone, Suk, Harris, Hallemeier, Zettle, Gillfillan, Vendrzyk, Quintana, Whitecloud"
 date: "2026-01-30"
 output:
@@ -12,8 +12,6 @@ output:
     df_print: paged
     self_contained: true
 ---
-
-# ITEK Vault Installation and Use Guide
 
 This guide explains how to install and use **ITEK Vault**, a retrieval-augmented large language model (LLM) designed to support responsible querying and synthesis of Indigenous Traditional Ecological Knowledge (ITEK) literature from a curated document database.
 
