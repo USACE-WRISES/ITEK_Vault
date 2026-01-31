@@ -98,14 +98,15 @@ When using ITEK Vault in publications, reports, or presentations, please cite th
 Slone, S. M., Suk, H., Harris, A., Hallemeier, J., Zettle, B., Gillfillan, M., Vendrzyk, J., Quintana, V., & Whitecloud, S. (2026). *ITEK Vault* (Version 1.0). Zenodo.https://doi.org/10.5281/zenodo.18436869.
 
 If model outputs are used directly, users are encouraged to:
+
 - Review all cited source documents
 - Attribute both ITEK Vault and the original source materials
-- Clearly distinguish synthesized model output from original Indigenous knowledge sources
+- Clearly distinguish synthesized model output from original Indigenous Knowledge sources
 
 ---
 
 ## Intended Use and Limitations
 
-ITEK Vault is designed to assist with literature review, synthesis, and exploratory analysis. It does not replace engagement with Indigenous communities, knowledge holders, or original source materials.
+ITEK Vault is designed to assist with literature review, synthesis, and exploratory analysis. It does not replace engagement with Indigenous communities, Knowledge holders, or original source materials.
 
 Model outputs should be treated as interpretive summaries derived from the curated corpus and verified against primary sources before use in decision-making, policy development, or applied research contexts.
