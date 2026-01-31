@@ -20,6 +20,7 @@ This guide explains how to install and use **ITEK Vault**, a retrieval-augmented
 ITEK Vault is intended for research and educational use. It emphasizes transparency, source grounding, and explicit citation to reduce hallucinations and misrepresentation when working with Indigenous knowledge systems.
 
 This guide covers:
+
 - Required software and installation steps
 - How to access the ITEK Vault corpus
 - How to run and query the model locally
