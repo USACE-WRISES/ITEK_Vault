@@ -1,0 +1,199 @@
+---
+title: "ITEK Vault Installation and Use Guide"
+author: "Scott Michael Slone, Suk, Harris, Hallemeier, Zettle, Gillfillan, Vendrzyk, Quintana, Whitecloud"
+date: "2026-01-30"
+output:
+  html_document:
+    toc: false
+    toc_depth: 3
+    number_sections: false
+    theme: cosmo
+    code_folding: hide
+    df_print: paged
+    self_contained: true
+    highlight: tango
+    css: style.css
+---
+
+This guide explains how to install and use **ITEK Vault**, a retrieval-augmented large language model (LLM) designed to support responsible querying and synthesis of Indigenous Traditional Ecological Knowledge (ITEK) literature from a curated document database.
+
+## Purpose
+
+ITEK Vault is intended for research and educational use. It emphasizes transparency, source grounding, and explicit citation to reduce hallucinations and misrepresentation when working with Indigenous knowledge systems.
+
+This guide covers:
+
+- Required software and installation steps
+- How to access the ITEK Vault corpus
+- How to run and query the model locally
+- How to cite and reference ITEK Vault outputs
+
+<div class="callout callout-info">
+<b>Important:</b> ITEK Vault runs locally on each user’s computer. The interface connects to a local Python server. Users must start the server before using the interface.
+</div>
+
+---
+
+## Installing Python
+
+<div class="steps">
+
+<div class="step">
+<div class="step-title">Step 1. Install Python 3.11</div>
+
+Download and install Python 3.11:
+https://www.python.org/downloads/
+
+During installation, select:
+
+- Add python.exe to PATH
+- Install launcher for all users (py.exe)
+</div>
+
+<div class="step">
+<div class="step-title">Step 2. Verify installation</div>
+
+Open PowerShell and run:
+
+```powershell
+py --version
+```
+
+## Installing Ollama
+
+<div class="steps">
+
+<div class="step">
+<div class="step-title">Step 1. Install Ollama</div>
+
+Download Ollama:
+https://ollama.com/download
+</div>
+
+<div class="step">
+<div class="step-title">Step 2. Pull the required model</div>
+
+
+```powershell
+ollama pull llama3
+```
+
+5. Start the Ollama service if it is not already running:
+
+```powershell
+ollama serve
+```
+If Ollama reports that only one instance may run at a time, this indicates it is already running as expected. By default, Ollama typically starts automatically when the system boots.
+
+---
+
+## ITEK Vault
+
+ITEK Vault is distributed as a curated corpus and retrieval augmented model workflow. Large derived artifacts such as vector indices are hosted externally.
+
+## Downloading the ITEK Vault
+
+<a href="https://zenodo.org/records/18436869?token=eyJhbGciOiJIUzUxMiJ9.eyJpZCI6ImJjMzVjMDFiLTg4YWYtNDJkYy1hYTc0LWU4ZmU3MjIwMDVjZiIsImRhdGEiOnt9LCJyYW5kb20iOiI5OTM5YTE5YWVjY2JkOWJkM2VjMTY5Mjc1ZWZiOWIxZSJ9.NtidUp_ddO8eQFbBX2yMhi_zXMhrmiIfh1ePSsCdskCnay9h0_rp_Mlf8y4mOJtLWAwOFynj_CCvXU_ErHzEKQ"
+   target="_blank"
+   aria-label="Access the ITEK Vault"
+   style="
+     display: inline-flex;
+     align-items: center;
+     gap: 12px;
+     padding: 16px 27px;
+     border-radius: 999px;
+     background-color: #2563eb;
+     color: #ffffff;
+     font-weight: 700;
+     font-size: 1.1rem;
+     text-decoration: none;
+   ">
+  👥 Click to Download the ITEK Vault
+</a>
+
+<div class="callout callout-info">
+This record provides the versioned corpus, metadata describing scope, and persistent identifiers to support reproducibility and citation.
+</div>
+
+Users should download the archived materials from Zenodo and follow the repository-specific instructions to place them in the appropriate local directories before initializing the model.
+
+---
+
+## Accessing the ITEK Vault
+
+ITEK Vault runs as a local web application.
+
+<div class="steps">
+
+<div class="step">
+<div class="step-title">Step 1. Open PowerShell in the project folder</div>
+
+
+```powershell
+cd E:\ITEK_Vault
+```
+2. Activate the virtual environment and download dependencies
+
+```powershell
+python -m venv venv # create virtual environment
+venv\Scripts\activate # activate virtual environment
+pip install -r requirements.txt # instal dependencies
+```
+3. Start the web server
+
+```powershell
+uvicorn query_server:app --host 127.0.0.1 --port 8000 # Load server
+```
+Within the directory, you should now see an internet shortcut for the 'ITEK Vault'.
+
+4. Reload the web server if needed
+
+```powershell
+uvicorn query_server:app --reload # reload server
+```
+
+After you load the server, you can just run the app below.
+
+## Running the ITEK Vault
+
+<a href="https://vkzfr3-vanessa-mahan.shinyapps.io/ITEK_Vault_App/"
+   target="_blank"
+   aria-label="Access the ITEK Vault"
+   style="
+     display: inline-flex;
+     align-items: center;
+     gap: 12px;
+     padding: 16px 27px;
+     border-radius: 999px;
+     background-color: #2563eb;
+     color: #ffffff;
+     font-weight: 700;
+     font-size: 1.1rem;
+     text-decoration: none;
+   ">
+  🌐 Click to Open the ITEK Vault
+</a>
+
+<div class="callout callout-warning">
+The Shiny interface requires a running ITEK Vault server. If the Shiny app is configured to use a local server, you must start the server on your computer first.
+</div>
+
+## Citation and Attribution
+
+When using ITEK Vault in publications, reports, or presentations, please cite the Zenodo record:
+
+Slone, S. M., Suk, H., Harris, A., Hallemeier, J., Zettle, B., Gillfillan, M., Vendrzyk, J., Quintana, V., & Whitecloud, S. (2026). *ITEK Vault* (Version 1.0). Zenodo.https://doi.org/10.5281/zenodo.18436869.
+
+If model outputs are used directly, users are encouraged to:
+
+- Review all cited source documents
+- Attribute both ITEK Vault and the original source materials
+- Clearly distinguish synthesized model output from original Indigenous Knowledge sources
+
+---
+
+## Intended Use and Limitations
+
+ITEK Vault is designed to assist with literature review, synthesis, and exploratory analysis. It does not replace engagement with Indigenous communities, Knowledge holders, or original source materials.
+
+Model outputs should be treated as interpretive summaries derived from the curated corpus and verified against primary sources before use in decision-making, policy development, or applied research contexts.
