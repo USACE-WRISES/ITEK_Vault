@@ -1,0 +1,23 @@
+# requirements.txt - FAISS-only version for ITEKbot (query_server + local_llm.py)
+
+fastapi>=0.115.0
+uvicorn[standard]>=0.30.0
+
+langchain-core>=0.3.0
+langchain-ollama>=0.3.0
+langchain-community>=0.3.0
+langchain>=0.3.0
+langchain-text-splitters>=0.3.0     # ← Required for RecursiveCharacterTextSplitter
+
+faiss-cpu>=1.8.0
+
+PyMuPDF>=1.24.0
+
+pydantic>=2.8.0
+
+bibtexparser>=1.4.0
+
+tqdm>=4.66.0
+requests>=2.32.0
+fuzzywuzzy>=0.18.0
+python-levenshtein>=0.25.0
