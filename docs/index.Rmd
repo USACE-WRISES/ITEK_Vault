@@ -182,7 +182,7 @@ The Shiny interface requires a running ITEK Vault server.
 
 When using ITEK Vault in publications, reports, or presentations, please cite the Zenodo record:
 
-Slone, S. M., Suk, H., Harris, A., Hallemeier, J., Zettle, B., Gillfillan, M., Vendrzyk, J., Quintana, V., & Whitecloud, S. (2026). *ITEK Vault* (Version 1.0). Zenodo.https://doi.org/10.5281/zenodo.18436869.
+Slone, S. M., Suk, H., Harris, A., Hallemeier, J., Zettle, B., Gillfillan, M., Vendrzyk, J., Quintana, V., & Whitecloud, S. (2026). *ITEK Vault* (Version 1.0.1). Zenodo.https://doi.org/10.5281/zenodo.18436869.
 
 If model outputs are used directly, users are encouraged to:
 
