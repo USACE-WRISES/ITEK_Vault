@@ -1,3 +1,9 @@
+###INDIGENOUS TRADITIONAL ECOLOGICAL KNOWLEDGE (ITEK) VAULT
+### LLM FOR QUERYING DATABASE OF ITEK
+### CURRENT VERSION 1.0.2
+### RECENT CHANGES
+### -Change to query string building to address packet transfer issues
+
 import os
 import fitz  # PyMuPDF
 from langchain_ollama import OllamaLLM
@@ -1847,33 +1853,21 @@ class LocalLLM:
         # Sync vector store metadata with BibTeX to ensure consistency
 
         base_context = self.context or "Focus on Indigenous Traditional Ecological Knowledge"
-        # prompt_template = PromptTemplate.from_template(
-            # """Context: {context}
+		# === FIXED: Build template string FIRST, then create PromptTemplate ===
+        template_str = """Context: {context}
 
-    # Documents:
-    # {documents}
+		Documents:
+		{documents}
 
-    # Query: {query}
+		Query: {query}
 
-    # Answer the query based on the provided documents and context. Always support your answer with inline citations to the relevant references using their numbers, e.g., [1] for the first reference, [2] for the second, and so on. Use multiple citations where appropriate to substantiate claims."""
-        # )
+		Answer the query based on the provided documents and context. """
 
-
-
-
-        prompt_template = PromptTemplate.from_template(
-            """Context: {context}
-
-    Documents:
-    {documents}
-
-    Query: {query}
-
-    Answer the query based on the provided documents and context. """
-        )
         if includereferences:
-            prompt_template += """Always support your answer with inline citations to the relevant references using their numbers, e.g., [1] for the first reference, [2] for the second, and so on. Use multiple citations where appropriate to substantiate claims."""
+            template_str += """Always support your answer with inline citations to the relevant references using their numbers, e.g., [1] for the first reference, [2] for the second, and so on. Use multiple citations where appropriate to substantiate claims."""
 
+        prompt_template = PromptTemplate.from_template(template_str)
+        # =====================================================================
 
         constraints = []
         if specific_title:

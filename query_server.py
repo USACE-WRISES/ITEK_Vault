@@ -7,13 +7,9 @@ import os
 
 app = FastAPI()
 
-# ────────────────────────────────────────────────────────────────
-# Use RELATIVE path — assumes itek_vectorstore folder is next to this script
-# ────────────────────────────────────────────────────────────────
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))           # folder containing query_server.py
 VECTOR_STORE_FOLDER = os.path.join(BASE_DIR, "itek_vectorstore")
 
-# Quick existence check (helpful for debugging)
 if not os.path.exists(VECTOR_STORE_FOLDER):
     print(f"ERROR: Vector store folder not found at {VECTOR_STORE_FOLDER}")
     print("Make sure the 'itek_vectorstore' folder is in the same directory as this script.")
@@ -59,7 +55,6 @@ if __name__ == "__main__":
                     if port > start_port + 100:  # safety limit
                         raise RuntimeError("No free ports found in range 8000–8100")
 
-    # Try preferred ports in order; fall back to auto-finding if all taken
     preferred_ports = [8001, 8000, 8080, 9000]
     selected_port = None
 

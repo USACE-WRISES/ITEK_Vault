@@ -10,7 +10,7 @@ if %ERRORLEVEL% neq 0 (
 )
 
 echo Installing/updating libraries if missing...
-pip install --quiet --upgrade fastapi uvicorn langchain-ollama langchain-community faiss-cpu pydantic
+pip install -r requirements.txt
 
 echo Starting ITEKbot...
 python query_server.py
